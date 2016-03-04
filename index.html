@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<div class="alert alert-danger" role="alert">This site is a PROTOTYPE. Do not take it seriously!</div>
+
+<h1>{{site.title}}</h1>
+
+<h2>
+  Pay what you want for all this:
+</h2>
+
+{% for item in site.items %}
+  {% cycle '<div class="row">', '', '', '' %}
+  <div class="col-xs-12 col-md-3">
+    <div class='thumbnail'>
+      <img class="img-rounded media-object" src="{{item.image}}" alt="{{item.title}}" title="{{item.title}}">
+      <div class='caption'>
+        <a href="{{item.url}}"><h4 class="media-heading">{{item.title}}</h4></a>
+        <p>{{item.content}}</p>
+      </div>
+    </div>
+  </div>
+  {% cycle '', '', '', '</div>' %}
+{% endfor %}
+
+<div class='well'>
+
+  <p>
+    Choose your price for all the above benefits!
+  </p>
+
+  <p>
+    New benefits are being added to the ODI bundle all the time; we'll let you know when there are new things for you!
+  </p>
+
+  <div>
+    <a class='btn btn-default' href='https://directory.theodi.org/members/new?level=individual'>£2</a>
+    <a class='btn btn-default' href='https://directory.theodi.org/members/new?level=individual'>£5</a>
+    <a class='btn btn-primary' href='https://directory.theodi.org/members/new?level=individual'>£10</a>
+    <a class='btn btn-default' href='https://directory.theodi.org/members/new?level=individual'>£20</a>
+  </div>
+  
+</div>
